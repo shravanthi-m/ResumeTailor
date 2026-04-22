@@ -15,11 +15,11 @@ import json
 import re
 import subprocess
 import datetime
-import urllib.request
-import urllib.parse
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
+import pandas as pd
+from jobspy import scrape_jobs
 import anthropic
 from flask import Flask, request, jsonify, render_template_string
 from dotenv import load_dotenv
@@ -33,9 +33,8 @@ app    = Flask(__name__)
 client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 TRACKER_PATH = Path.home() / "Desktop" / "applications.xlsx"
-RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY", "")
 
-JSEARCH_QUERIES = [
+SEARCH_QUERIES = [
     "entry level software engineer",
     "entry level machine learning engineer",
     "entry level data engineer",
@@ -854,67 +853,65 @@ def index():
 # ROUTE — GET /jobs
 # ============================================================
 
-def _jsearch_fetch(query: str) -> list:
-    params = urllib.parse.urlencode({
-        "query":       query,
-        "num_pages":   "1",
-        "date_posted": "today",
-    })
-    req = urllib.request.Request(
-        f"https://jsearch.p.rapidapi.com/search?{params}",
-        headers={
-            "X-RapidAPI-Key":  RAPIDAPI_KEY,
-            "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-        },
-    )
+def _clean(val) -> str:
+    if val is None:
+        return ""
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            return json.loads(resp.read().decode()).get("data", [])
-    except Exception:
+        if pd.isna(val):
+            return ""
+    except (TypeError, ValueError):
+        pass
+    return str(val)
+
+
+def _jobspy_fetch(query: str) -> list:
+    try:
+        df = scrape_jobs(
+            site_name=["indeed", "zip_recruiter", "glassdoor", "linkedin"],
+            search_term=query,
+            hours_old=24,
+            results_wanted=15,
+            country_indeed="USA",
+            linkedin_fetch_description=True,
+        )
+        if df is None or df.empty:
+            return []
+        rows = []
+        for _, row in df.iterrows():
+            date_posted = row.get("date_posted")
+            try:
+                posted_str = date_posted.isoformat() if hasattr(date_posted, "isoformat") and not pd.isna(date_posted) else ""
+            except Exception:
+                posted_str = ""
+            rows.append({
+                "id":          _clean(row.get("id")) or _clean(row.get("job_url")),
+                "title":       _clean(row.get("title")),
+                "company":     _clean(row.get("company")),
+                "location":    _clean(row.get("location")),
+                "experience":  "Not specified",
+                "posted":      posted_str,
+                "url":         _clean(row.get("job_url")),
+                "description": _clean(row.get("description")),
+            })
+        return rows
+    except Exception as e:
+        print(f"jobspy error for '{query}': {e}")
         return []
 
 
 @app.route("/jobs")
 def get_jobs():
     with ThreadPoolExecutor(max_workers=4) as ex:
-        batches = list(ex.map(_jsearch_fetch, JSEARCH_QUERIES))
+        batches = list(ex.map(_jobspy_fetch, SEARCH_QUERIES))
 
     seen, jobs = set(), []
     for batch in batches:
         for j in batch:
-            jid = j.get("job_id")
-            if not jid or jid in seen:
+            key = j["url"] or j["id"]
+            if not key or key in seen:
                 continue
-            seen.add(jid)
-
-            exp_obj = j.get("job_required_experience") or {}
-            months  = exp_obj.get("required_experience_in_months")
-            if months:
-                yrs     = months / 12
-                exp_str = f"{yrs:.0f}+ yrs" if yrs >= 1 else "< 1 yr"
-            elif exp_obj.get("no_experience_required"):
-                exp_str = "No exp required"
-            else:
-                exp_str = "Not specified"
-
-            city, state, country = (
-                j.get("job_city") or "",
-                j.get("job_state") or "",
-                j.get("job_country") or "",
-            )
-            parts    = [p for p in [city, state] if p]
-            location = ", ".join(parts) if parts else country
-
-            jobs.append({
-                "id":          jid,
-                "title":       j.get("job_title", ""),
-                "company":     j.get("employer_name", ""),
-                "location":    location,
-                "experience":  exp_str,
-                "posted":      j.get("job_posted_at_datetime_utc", ""),
-                "url":         j.get("job_apply_link", ""),
-                "description": j.get("job_description", ""),
-            })
+            seen.add(key)
+            jobs.append(j)
 
     return jsonify({"jobs": jobs, "count": len(jobs)})
 
@@ -1115,6 +1112,6 @@ def log_to_tracker(company, role, url, jd, fit_score, ats_score, recruiter_score
 # ============================================================
 
 if __name__ == "__main__":
-    print("Resume Tailor running at http://localhost:5001")
+    print("Resume Tailor running at http://localhost:5002")
     print("Press Ctrl+C to stop.")
-    app.run(debug=False, port=5001)
+    app.run(debug=False, port=5002)

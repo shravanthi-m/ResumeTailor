@@ -1,6 +1,6 @@
 # Resume Tailor
 
-A local Mac web app that screens job descriptions with Claude AI and tailors your resume to them — exporting a PDF from your Pages template and logging each application to an Excel tracker.
+A local Mac web app that screens job descriptions with Claude AI and tailors your resume to them, exporting a PDF from your Pages template and logging each application to an Excel tracker.
 
 ---
 
