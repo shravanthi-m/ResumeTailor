@@ -1,0 +1,291 @@
+{
+  "name": "Shravanthi Murugesan",
+  "email": "shravanthim22@gmail.com",
+  "phone": "(248) 250-4641",
+  "linkedin": "linkedin.com/in/shravanthi-murugesan",
+
+  "education": [
+    {
+      "school": "University of Massachusetts Amherst",
+      "department": "Manning College of Information and Computer Sciences",
+      "degree": "Master of Science in Computer Science",
+      "dates": "Sept 2024 - May 2026",
+      "gpa": "3.92/4.0",
+      "coursework": [
+        "Reinforcement Learning",
+        "Neural Networks",
+        "Statistics",
+        "Robotics",
+        "Algorithms for Data Science",
+        "Theory and Practice of Software Engineering",
+        "Research Methods in Empirical Computer Science"
+      ]
+    },
+    {
+      "school": "Sri Sivasubramaniya Nadar College of Engineering",
+      "degree": "Bachelor of Technology",
+      "coursework": [
+        "Data Structures and Algorithms",
+        "Database Management Systems",
+        "Web Development",
+        "Machine Learning",
+        "Operating Systems",
+        "Computer Networks",
+        "Cloud Computing",
+        "Image Processing",
+        "Digital Signal Processing"
+      ]
+    }
+  ],
+
+  "experience": [
+    {
+      "title": "Extern",
+      "company": "Adobe",
+      "location": "Amherst, MA",
+      "dates": "2025 - Present",
+      "bullets": [
+        "Working on fine-grained image captioning capabilities with a focus on factual accuracy and reducing hallucination in multimodal LLM outputs.",
+        "Extended a multi-agent LLM-MLLM verification pipeline to improve factual accuracy and reduce hallucination in image captioning at the attribute level.",
+        "Integrated GRPO-based reinforcement learning to replace multi-pass proposition verification with a single-pass approach, reducing latency and computational overhead.",
+        "Ran controlled experiments and analyzed failure cases across captioning benchmarks to measure gains in descriptive accuracy and efficiency."
+      ],
+      "tags": ["nlp", "cv", "llm", "multimodal", "rl", "grpo", "research", "hallucination"]
+    },
+    {
+      "title": "Research Assistant",
+      "company": "UMass Amherst",
+      "location": "Amherst, MA",
+      "dates": "2025 - Present",
+      "bullets": [
+        "Implemented a baseline model for edge detection in canine ultrasound videos using PyTorch.",
+        "Conducted a literature review on edge detection techniques and explored self-supervised approaches to address limited annotated data."
+      ],
+      "tags": ["cv", "pytorch", "medical-imaging", "self-supervised", "research"]
+    }
+  ],
+
+  "skills": {
+    "languages": [
+      { "name": "Python",     "tags": ["language"] },
+      { "name": "C",          "tags": ["language"] },
+      { "name": "C++",        "tags": ["language"] },
+      { "name": "SQL",        "tags": ["language"] },
+      { "name": "Bash",       "tags": ["language"] },
+      { "name": "JavaScript", "tags": ["language"] },
+      { "name": "Java",       "tags": ["language"] },
+      { "name": "HTML",       "tags": ["language"] },
+      { "name": "CSS",        "tags": ["language"] }
+    ],
+    "frameworks": [
+      { "name": "PyTorch",      "tags": ["framework", "ml", "deep-learning"] },
+      { "name": "TensorFlow",   "tags": ["framework", "ml", "deep-learning"] },
+      { "name": "Keras",        "tags": ["framework", "ml"] },
+      { "name": "Pandas",       "tags": ["framework", "data-science"] },
+      { "name": "NumPy",        "tags": ["framework", "data-science"] },
+      { "name": "scikit-learn", "tags": ["framework", "ml", "data-science"] },
+      { "name": "OpenCV",       "tags": ["framework", "cv"] },
+      { "name": "HuggingFace",  "tags": ["framework", "nlp", "ml"] },
+      { "name": "Unsloth",      "tags": ["framework", "ml", "llm"] },
+      { "name": "Gradio",       "tags": ["framework", "ml", "ui"] },
+      { "name": "Flask",        "tags": ["framework", "backend"] },
+      { "name": "FastAPI",      "tags": ["framework", "backend"] },
+      { "name": "Angular",      "tags": ["framework", "frontend"] },
+      { "name": "ExpressJS",    "tags": ["framework", "backend"] },
+      { "name": "Node.js",      "tags": ["framework", "backend"] },
+      { "name": "MongoDB",      "tags": ["framework", "database"] },
+      { "name": "Spring Boot",  "tags": ["framework", "backend"] },
+      { "name": "Seaborn",      "tags": ["framework", "data-science"] }
+    ],
+    "tools": [
+      { "name": "Kubernetes",        "tags": ["tool", "devops", "cloud"] },
+      { "name": "Docker",            "tags": ["tool", "devops"] },
+      { "name": "Linux",             "tags": ["tool", "systems"] },
+      { "name": "Git",               "tags": ["tool"] },
+      { "name": "AWS",               "tags": ["tool", "cloud"] },
+      { "name": "Weights & Biases",  "tags": ["tool", "ml"] },
+      { "name": "CUDA",              "tags": ["tool", "ml", "deep-learning"] },
+      { "name": "ROS",               "tags": ["tool", "robotics"] },
+      { "name": "Gazebo",            "tags": ["tool", "robotics"] },
+      { "name": "Apache Spark",      "tags": ["tool", "data-engineering"] },
+      { "name": "Apache Kafka",      "tags": ["tool", "data-engineering"] }
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "One-shot Custom Stylization",
+      "description": "Modified GAN architecture for high-fidelity style transfer from a single reference image to unseen target domains",
+      "bullets": [
+        "Developed a modified GAN architecture in PyTorch capable of performing high-fidelity style transfer from a single reference image to unseen target domains, with a focus on discriminator accuracy.",
+        "Created a user-friendly interface using Gradio allowing real-time user testing and style parameter adjustment."
+      ],
+      "tags": ["cv", "gan", "pytorch", "deep-learning", "generative-ai", "ml"]
+    },
+    {
+      "name": "One-shot Custom Stylization (alt)",
+      "description": "Modified GAN architecture for high-fidelity style transfer from a single reference image to unseen target domains",
+      "bullets": [
+        "Developed a modified GAN architecture in PyTorch capable of performing high-fidelity style transfer from a single reference image to unseen target domains, with a focus on discriminator accuracy.",
+        "Created a user-friendly interface using Gradio allowing real-time user testing and style parameter adjustment."
+      ],
+      "tags": ["cv", "gan", "pytorch", "deep-learning", "generative-ai", "ml"]
+    },
+    {
+      "name": "Domain Generalization Across Distribution Shifts",
+      "description": "Learning framework to maintain prediction stability under distribution shifts including color, texture, and lighting variations",
+      "bullets": [
+        "Implemented and replicated a learning framework to maintain prediction stability under distribution shifts including color, texture, and lighting variations, building training and evaluation pipelines.",
+        "Ran controlled domain-shift experiments and analyzed failure cases to identify which components contributed to improved stability over standard ERM baselines."
+      ],
+      "tags": ["ml", "robustness", "distribution-shift", "pytorch", "data-science", "research"]
+    },
+    {
+      "name": "Domain Generalization Across Distribution Shifts (alt)",
+      "description": "Learning framework to maintain prediction stability under distribution shifts including color, texture, and lighting variations",
+      "bullets": [
+        "Implemented and replicated a learning framework to maintain prediction stability under distribution shifts including color, texture, and lighting variations, building training and evaluation pipelines.",
+        "Ran controlled domain-shift experiments and analyzed failure cases to identify which components contributed to improved stability over standard ERM baselines."
+      ],
+      "tags": ["ml", "robustness", "distribution-shift", "pytorch", "data-science", "research"]
+    },
+    {
+      "name": "Semi-Supervised Hybrid Model for Advanced Few-Shot Learning",
+      "description": "Hybrid few-shot learning approach combining Semi-Supervised Learning and Model-Agnostic Meta-Learning",
+      "bullets": [
+        "Developed a hybrid few-shot learning approach combining Semi-Supervised Learning and Model-Agnostic Meta-Learning.",
+        "Utilized a pre-trained model to generate pseudo-labels and combined with MAML training process."
+      ],
+      "tags": ["ml", "few-shot", "meta-learning", "semi-supervised", "pytorch", "research"]
+    },
+    {
+      "name": "Semi-Supervised Hybrid Model for Advanced Few-Shot Learning (alt)",
+      "description": "Hybrid few-shot learning approach combining Semi-Supervised Learning and Model-Agnostic Meta-Learning",
+      "bullets": [
+        "Developed a hybrid few-shot learning approach combining Semi-Supervised Learning and Model-Agnostic Meta-Learning.",
+        "Utilized a pre-trained model to generate pseudo-labels and combined with MAML training process."
+      ],
+      "tags": ["ml", "few-shot", "meta-learning", "semi-supervised", "pytorch", "research"]
+    },
+    {
+      "name": "Fine-grained Image Captioning with LLM-MLLM Verification",
+      "description": "Multi-agent LLM-MLLM pipeline to improve factual accuracy and reduce hallucination in image captioning at the attribute level",
+      "bullets": [
+        "Extended a multi-agent LLM-MLLM verification pipeline to improve factual accuracy and reduce hallucination in image captioning at the attribute level.",
+        "Integrated GRPO-based reinforcement learning to replace multi-pass proposition verification with a single-pass approach, reducing latency and computational overhead.",
+        "Ran controlled experiments and analyzed failure cases across captioning benchmarks to measure gains in descriptive accuracy and efficiency."
+      ],
+      "tags": ["nlp", "cv", "llm", "multimodal", "rl", "grpo", "research", "hallucination"]
+    },
+    {
+      "name": "Fine-grained Image Captioning with LLM-MLLM Verification (alt)",
+      "description": "Multi-agent LLM-MLLM pipeline to improve factual accuracy and reduce hallucination in image captioning at the attribute level",
+      "bullets": [
+        "Extended a multi-agent LLM-MLLM verification pipeline to improve factual accuracy and reduce hallucination in image captioning at the attribute level.",
+        "Integrated GRPO-based reinforcement learning to replace multi-pass proposition verification with a single-pass approach, reducing latency and computational overhead.",
+        "Ran controlled experiments and analyzed failure cases across captioning benchmarks to measure gains in descriptive accuracy and efficiency."
+      ],
+      "tags": ["nlp", "cv", "llm", "multimodal", "rl", "grpo", "research", "hallucination"]
+    },
+    {
+      "name": "Edge Detection in Canine Ultrasound Videos",
+      "description": "Baseline model for edge detection in canine ultrasound videos using PyTorch with self-supervised approaches",
+      "bullets": [
+        "Implemented a baseline model for edge detection in canine ultrasound videos using PyTorch.",
+        "Conducted a literature review on edge detection techniques and explored self-supervised approaches to address limited annotated data."
+      ],
+      "tags": ["cv", "pytorch", "medical-imaging", "self-supervised", "research"]
+    },
+    {
+      "name": "Edge Detection in Canine Ultrasound Videos (alt)",
+      "description": "Baseline model for edge detection in canine ultrasound videos using PyTorch with self-supervised approaches",
+      "bullets": [
+        "Implemented a baseline model for edge detection in canine ultrasound videos using PyTorch.",
+        "Conducted a literature review on edge detection techniques and explored self-supervised approaches to address limited annotated data."
+      ],
+      "tags": ["cv", "pytorch", "medical-imaging", "self-supervised", "research"]
+    },
+    {
+      "name": "Meal Planner",
+      "description": "Full-stack meal planning web app using React and external recipe APIs",
+      "bullets": [
+        "Built a full-stack meal planning platform using React that generates a weekly meal plan using Spoonacular and Fat Secret APIs.",
+        "Implemented user authentication, dynamic shopping lists, and responsive RESTful services for recipe and health data."
+      ],
+      "tags": ["fullstack", "react", "backend", "api", "javascript"]
+    },
+    {
+      "name": "Meal Planner (alt)",
+      "description": "Full-stack meal planning web app using React and external recipe APIs",
+      "bullets": [
+        "Built a full-stack meal planning platform using React that generates a weekly meal plan using Spoonacular and Fat Secret APIs.",
+        "Implemented user authentication, dynamic shopping lists, and responsive RESTful services for recipe and health data."
+      ],
+      "tags": ["fullstack", "react", "backend", "api", "javascript"]
+    },
+    {
+      "name": "Automated Detection of Epilepsy Using EEG Signals",
+      "description": "Deep learning model for epilepsy seizure detection from EEG signals achieving ~87% accuracy",
+      "bullets": [
+        "Built a deep learning model for non-reconstructive seizure detection from EEG signals, achieving ~87% accuracy and ~0.80 AUC.",
+        "Compared LSTM, decision tree, and rule-based approaches; optimized for high-recall detection of epileptogenic zones.",
+        "Trained and evaluated on a public EEG dataset, achieving ~94% validation accuracy with optimization."
+      ],
+      "tags": ["ml", "deep-learning", "eeg", "medical", "lstm", "classification"]
+    },
+    {
+      "name": "Automated Detection of Epilepsy Using EEG Signals (alt)",
+      "description": "Deep learning model for epilepsy seizure detection from EEG signals achieving ~87% accuracy",
+      "bullets": [
+        "Built a deep learning model for non-reconstructive seizure detection from EEG signals, achieving ~87% accuracy and ~0.80 AUC.",
+        "Compared LSTM, decision tree, and rule-based approaches; optimized for high-recall detection of epileptogenic zones.",
+        "Trained and evaluated on a public EEG dataset, achieving ~94% validation accuracy with optimization."
+      ],
+      "tags": ["ml", "deep-learning", "eeg", "medical", "lstm", "classification"]
+    },
+    {
+      "name": "RobotApp",
+      "description": "End-to-end autonomous robot navigation system using ROS, LiDAR, and RGB-D sensing",
+      "bullets": [
+        "Built an end-to-end autonomous robot navigation system using ROS with LiDAR and RGB-D sensing for spatial anomaly detection.",
+        "Implemented goal-directed navigation with depth estimation, loop closure, and random waypoint logic.",
+        "Evaluated robustness across noisy environments and behavior under sensor noise conditions."
+      ],
+      "tags": ["robotics", "ros", "lidar", "navigation", "systems"]
+    },
+    {
+      "name": "RobotApp (alt)",
+      "description": "End-to-end autonomous robot navigation system using ROS, LiDAR, and RGB-D sensing",
+      "bullets": [
+        "Built an end-to-end autonomous robot navigation system using ROS with LiDAR and RGB-D sensing for spatial anomaly detection.",
+        "Implemented goal-directed navigation with depth estimation, loop closure, and random waypoint logic.",
+        "Evaluated robustness across noisy environments and behavior under sensor noise conditions."
+      ],
+      "tags": ["robotics", "ros", "lidar", "navigation", "systems"]
+    }
+  ],
+
+  "achievements": [
+    "Hackathon winner — HackIT team, StyleZone",
+    "Published in IEEE Xplore, ICCDS 2022, Springer CCIS volume 2203",
+    "Participated in Big Stream (Spark, Kafka) challenge"
+  ],
+
+  "courses": [
+    { "name": "Reinforcement Learning",                          "tags": ["ml", "rl", "theory"] },
+    { "name": "Neural Networks",                                 "tags": ["ml", "deep-learning"] },
+    { "name": "Statistics",                                      "tags": ["math", "data-science"] },
+    { "name": "Robotics",                                        "tags": ["robotics", "systems"] },
+    { "name": "Algorithms for Data Science",                     "tags": ["algorithms", "data-science"] },
+    { "name": "Theory and Practice of Software Engineering",     "tags": ["software-engineering"] },
+    { "name": "Research Methods in Empirical Computer Science",  "tags": ["research", "methods"] },
+    { "name": "Database Management Systems",                     "tags": ["database", "sql"] },
+    { "name": "Data Structures and Analysis",                    "tags": ["algorithms", "theory"] },
+    { "name": "Operating Systems",                               "tags": ["systems"] },
+    { "name": "Computer Networks",                               "tags": ["systems", "networking"] },
+    { "name": "Cloud Computing",                                 "tags": ["cloud", "systems"] },
+    { "name": "Machine Learning",                                "tags": ["ml"] },
+    { "name": "Image Processing",                                "tags": ["cv"] },
+    { "name": "Web Development",                                 "tags": ["frontend", "backend"] }
+  ]
+}
